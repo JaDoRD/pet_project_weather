@@ -5,7 +5,7 @@ from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
 
-bot = Bot(token=8177135293:AAGppJ-9eJgTeryHgOyHl01ExbBX597q0tY)
+bot = Bot(token="tg_bot_token")
 dp = Dispatcher(bot)
 
 @dp.message_handler(commands=["start"])
