@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tg-bot-weather
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tg-bot-weather
+  template:
+    metadata:
+      labels:
+        app: tg-bot-weather
+    spec:
+      containers:
+        - name: tg-bot-weather
+          image: jadord/tg_weather_bot:latest
+          imagePullPolicy: Always
+          envFrom:
+              - secretRef:
+                  name: tg-bot-weather-secret
